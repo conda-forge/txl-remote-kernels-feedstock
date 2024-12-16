@@ -1,13 +1,13 @@
 {% set name = "txl-remote-kernels" %}
-{% set version = "0.2.14" %}
+{% set version = "0.2.15" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/txl_remote_kernels-{{ version }}.tar.gz
-  sha256: 80f911b2730bea5e9a6862970efe12bb194388ca6db54bf7900e78b7db1c4dde
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/txl_remote_kernels-{{ version }}.tar.gz
+  sha256: 85139e54ccb85a887729fbea8c3b69e1ba097985d757a9e5f4d26e9cb4b7c266
 
 build:
   noarch: python
@@ -25,7 +25,7 @@ requirements:
     - txl-kernel
     - httpx >=0.23.1
     - httpx-ws >=0.4.2
-    - pycrdt >=0.8.11,<0.9.0
+    - pycrdt >=0.10.9,<0.11.0
 
 test:
   # `pip check` was disabled, see: https://github.com/conda-forge/staged-recipes/pull/26869
