@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "txl-remote-kernels" %}
 {% set version = "0.2.15" %}
 
@@ -11,16 +12,16 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
 requirements:
   host:
-    - python >=3.10
+    - python {{ python_min }}
     - pip
     - hatchling
   run:
-    - python >=3.10
+    - python >={{ python_min }}
     - txl >=0.2.18,<0.3.0
     - txl-kernel
     - httpx >=0.23.1
@@ -34,6 +35,8 @@ test:
   #   - pip
   # commands:
   #   - pip check
+  requires:
+    - python {{ python_min }}
   imports:
     - txl_remote_kernels
 
