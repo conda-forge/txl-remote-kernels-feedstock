@@ -23,7 +23,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - txl =0.3.2
-    - txl-kernel
+    - txl-kernel >=0.3.6
     - httpx >=0.23.1
     - httpx-ws >=0.4.2
     - pycrdt >=0.10.9,<0.13.0
